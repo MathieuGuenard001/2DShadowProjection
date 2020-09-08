@@ -38,4 +38,16 @@ class Canvas {
                 position.y + LIGHT_SOURCE_DRAWING_RADIUS <= this.position.y + this.height;
         }
     }
+
+    getRandomPositionInCanvas() {
+        let min = Math.ceil(canvas.position.x);
+        let max = Math.floor(canvas.position.x + canvas.width);
+        let x = Math.floor(Math.random() * (max - min + 1) + min);
+
+        min = Math.ceil(canvas.position.y);
+        max = Math.floor(canvas.position.y + canvas.height);
+        let y = Math.floor(Math.random() * (max - min + 1) + min);
+
+        return new Position(x, y);
+    }
 }
