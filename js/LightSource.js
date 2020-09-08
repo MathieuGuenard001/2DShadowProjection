@@ -4,7 +4,7 @@ class LightSource {
     position;
 
     constructor(x, y) {
-        this.position = new Position(x, y);
+        this.position = new Vector2D(x, y);
     }
 
     draw() {
@@ -18,7 +18,7 @@ class LightSource {
     }
 
     updatePosition(position) {
-        if (position instanceof Position) {
+        if (position instanceof Vector2D) {
             this.position = position;
         }
     }

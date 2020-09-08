@@ -4,7 +4,7 @@ class Canvas {
     height;
 
     constructor(x, y, width, height) {
-        this.position = new Position(x, y);
+        this.position = new Vector2D(x, y);
         this.width = width;
         this.height = height;
 
@@ -31,7 +31,7 @@ class Canvas {
     }
 
     checkLightSourcePositionIsInCanvas(position) {
-        if (position instanceof Position) {
+        if (position instanceof Vector2D) {
             return position.x - LIGHT_SOURCE_DRAWING_RADIUS >= this.position.x &&
                 position.x + LIGHT_SOURCE_DRAWING_RADIUS <= this.position.x + this.width &&
                 position.y - LIGHT_SOURCE_DRAWING_RADIUS >= this.position.y &&
@@ -48,6 +48,6 @@ class Canvas {
         max = Math.floor(canvas.position.y + canvas.height);
         let y = Math.floor(Math.random() * (max - min + 1) + min);
 
-        return new Position(x, y);
+        return new Vector2D(x, y);
     }
 }
