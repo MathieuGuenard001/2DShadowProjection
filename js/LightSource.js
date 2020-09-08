@@ -16,4 +16,10 @@ class LightSource {
         ctx.fillStyle = "white";
         ctx.fill();
     }
+
+    updatePosition(position) {
+        if (position instanceof Position) {
+            this.position = position;
+        }
+    }
 }

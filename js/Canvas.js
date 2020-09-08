@@ -29,4 +29,13 @@ class Canvas {
         ctx.fillStyle = 'black';
         ctx.fillRect(this.position.x,this.position.y, this.width, this.height);
     }
+
+    checkLightSourcePositionIsInCanvas(position) {
+        if (position instanceof Position) {
+            return position.x - LIGHT_SOURCE_DRAWING_RADIUS >= this.position.x &&
+                position.x + LIGHT_SOURCE_DRAWING_RADIUS <= this.position.x + this.width &&
+                position.y - LIGHT_SOURCE_DRAWING_RADIUS >= this.position.y &&
+                position.y + LIGHT_SOURCE_DRAWING_RADIUS <= this.position.y + this.height;
+        }
+    }
 }
