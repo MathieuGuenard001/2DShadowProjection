@@ -17,7 +17,7 @@ function onLoad() {
     drawAll();
 
     // Will move the light source with the mouse
-    window.onmousemove = mouseMovedEvent;
+    document.getElementById("2DShadowProjectionCanvas").onmousemove = mouseMovedEvent;
 
     // This is temporary, only to help dev
     //window.setInterval(testRay, 10);
@@ -39,8 +39,8 @@ function testRay() {
 
 function mouseMovedEvent(event) {
     // Represent the position in the center of the light source
-    let mousePosition = new Vector2D(event.clientX - LIGHT_SOURCE_DRAWING_RADIUS,
-        event.clientY - LIGHT_SOURCE_DRAWING_RADIUS);
+    let mousePosition = new Vector2D(event.clientX - 2 * LIGHT_SOURCE_DRAWING_RADIUS,
+        event.clientY - 2 * LIGHT_SOURCE_DRAWING_RADIUS);
 
     // Ensure that the light source doesn't go out of the canvas
     if (canvas.checkLightSourcePositionIsInCanvas(mousePosition)) {

@@ -4,30 +4,30 @@ class Canvas {
     height;
 
     constructor(x, y, width, height) {
+        let canvas = document.getElementById("2DShadowProjectionCanvas");
+
         this.position = new Vector2D(x, y);
         this.width = width;
         this.height = height;
 
-        let canvas = document.getElementById("myCanvas");
-        canvas.x = this.position.x;
-        canvas.y = this.position.y;
-        canvas.width = this.width;
-        canvas.height = this.height;
-
+        canvas.x = x;
+        canvas.y = y;
+        canvas.width = width;
+        canvas.height = height;
         canvas.style.cursor = 'none';
 
         // to ensure that the canvas have the right dimension, we draw it back
         let ctx = canvas.getContext('2d');
-        ctx.clearRect(canvas.x,canvas.y, canvas.width, canvas.height);
+        ctx.clearRect(this.position.x, this.position.y, this.width, this.height);
     }
 
     draw() {
-        let canvas = document.getElementById("myCanvas");
+        let canvas = document.getElementById("2DShadowProjectionCanvas");
         let ctx = canvas.getContext('2d');
 
-        ctx.clearRect(this.position.x,this.position.y, this.width, this.height);
+        ctx.clearRect(this.position.x, this.position.y, this.width, this.height);
         ctx.fillStyle = 'black';
-        ctx.fillRect(this.position.x,this.position.y, this.width, this.height);
+        ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
     }
 
     checkLightSourcePositionIsInCanvas(position) {
@@ -40,12 +40,12 @@ class Canvas {
     }
 
     getRandomPositionInCanvas() {
-        let min = Math.ceil(canvas.position.x);
-        let max = Math.floor(canvas.position.x + canvas.width);
+        let min = Math.ceil(this.position.x);
+        let max = Math.floor(this.position.x + this.width);
         let x = Math.floor(Math.random() * (max - min + 1) + min);
 
-        min = Math.ceil(canvas.position.y);
-        max = Math.floor(canvas.position.y + canvas.height);
+        min = Math.ceil(this.position.y);
+        max = Math.floor(this.position.y + this.height);
         let y = Math.floor(Math.random() * (max - min + 1) + min);
 
         return new Vector2D(x, y);

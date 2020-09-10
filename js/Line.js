@@ -10,7 +10,7 @@ class Line {
     }
 
     draw() {
-        let canvas = document.getElementById("myCanvas");
+        let canvas = document.getElementById("2DShadowProjectionCanvas");
         let ctx = canvas.getContext('2d');
 
         ctx.beginPath();
