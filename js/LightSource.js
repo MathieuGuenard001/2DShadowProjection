@@ -13,7 +13,7 @@ class LightSource {
 
         ctx.beginPath();
         ctx.arc(this.position.x, this.position.y, LIGHT_SOURCE_DRAWING_RADIUS, 0, 2 * Math.PI);
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "yellow";
         ctx.fill();
     }
 

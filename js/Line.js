@@ -1,4 +1,4 @@
-class Wall {
+class Line {
     point1;
     point2;
     id;
@@ -16,7 +16,8 @@ class Wall {
         ctx.beginPath();
         ctx.moveTo(this.point1.x, this.point1.y);
         ctx.lineTo(this.point2.x, this.point2.y);
-        ctx.strokeStyle = "white";
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 2;
         ctx.stroke();
     }
 }

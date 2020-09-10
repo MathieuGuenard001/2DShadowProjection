@@ -7,6 +7,10 @@ class Circle {
         this.radius = radius;
     }
 
+    augmentRadius(augmentation) {
+        this.radius += augmentation;
+    }
+
     draw() {
         let canvas = document.getElementById("myCanvas");
         let ctx = canvas.getContext('2d');
