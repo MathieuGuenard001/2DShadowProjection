@@ -13,7 +13,6 @@ function onLoad() {
     generateWalls(5);
 
     lightEngine = new LightEngine();
-    //lightEngine.setMode(CIRCLE_RAY_MODE);
 
     drawAll();
 
