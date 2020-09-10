@@ -56,9 +56,11 @@ function generateWalls(numberOfWall) {
     // Left canvas wall
     walls.push(new Line(canvas.position, new Vector2D(canvas.position.x, canvas.position.y + canvas.height), 1));
     // Bottom canvas wall
-    walls.push(new Line(new Vector2D(canvas.position.x, canvas.position.y + canvas.height), new Vector2D(canvas.position.x + canvas.width, canvas.position.y + canvas.height), 2));
+    walls.push(new Line(new Vector2D(canvas.position.x, canvas.position.y + canvas.height),
+        new Vector2D(canvas.position.x + canvas.width, canvas.position.y + canvas.height), 2));
     // Right canvas wall
-    walls.push(new Line(new Vector2D(canvas.position.x + canvas.width, canvas.position.y), new Vector2D(canvas.position.x + canvas.width, canvas.position.y + canvas.height), 3));
+    walls.push(new Line(new Vector2D(canvas.position.x + canvas.width, canvas.position.y),
+        new Vector2D(canvas.position.x + canvas.width, canvas.position.y + canvas.height), 3));
 
 
 
